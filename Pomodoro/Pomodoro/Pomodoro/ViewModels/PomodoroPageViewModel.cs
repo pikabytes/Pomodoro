@@ -10,6 +10,8 @@ namespace Pomodoro.ViewModels
     public class PomodoroPageViewModel : NotificationObject
     {
         private Timer timer;
+        public int pomodoroDuration;
+        public int breakDuration;
         private TimeSpan timeSpan;
 
         public TimeSpan Ellapsed
@@ -46,13 +48,14 @@ namespace Pomodoro.ViewModels
         public PomodoroPageViewModel()
         {
             InitializeTimer();
-            LoadConfigureValues();
+            LoadConfiguredValues();
             StartOrPauseCommand = new Command(StartOrPauseCommandExecute);
         }
 
-        private void LoadConfigureValues()
+        private void LoadConfiguredValues()
         {
-            throw new NotImplementedException();
+            pomodoroDuration = (int)Application.Current.Properties[Literals.PomodoroDuration];
+            breakDuration = (int)Application.Current.Properties[Literals.BreakDuration];
         }
 
         private void InitializeTimer()
