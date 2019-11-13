@@ -43,6 +43,7 @@ namespace Pomodoro.ViewModels
             PropertyChanged += RootPageViewModel_PropertyChanged;
         }
 
+
         private void RootPageViewModel_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             if(e.PropertyName == nameof(SelectedMenuItem))
@@ -50,6 +51,10 @@ namespace Pomodoro.ViewModels
                 if(SelectedMenuItem == "Configuracion")
                 {
                     MessagingCenter.Send(this, "GoToConfiguration");
+                }
+                if(selectedMenuItem == "Pomodoro")
+                {
+                    MessagingCenter.Send(this, "GoToPomodoro");
                 }
                 
             }

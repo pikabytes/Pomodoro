@@ -20,6 +20,10 @@ namespace Pomodoro
                 Detail = new NavigationPage(new ConfigurationsPage());
                 IsPresented = false;
             });
+            MessagingCenter.Subscribe<RootPageViewModel>(this, "GoToPomodoro", (a) => {
+                Detail = new NavigationPage(new PomodoroPage());
+                IsPresented = false;
+            });
             //MasterPage.ListView.ItemSelected += ListView_ItemSelected;
         }
 
