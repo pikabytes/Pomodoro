@@ -52,7 +52,11 @@ namespace Pomodoro.ViewModels
                 {
                     MessagingCenter.Send(this, "GoToConfiguration");
                 }
-                if(selectedMenuItem == "Pomodoro")
+                if (SelectedMenuItem == "Historico")
+                {
+                    MessagingCenter.Send(this, "GoToHistory");
+                }
+                if (selectedMenuItem == "Pomodoro")
                 {
                     MessagingCenter.Send(this, "GoToPomodoro");
                 }

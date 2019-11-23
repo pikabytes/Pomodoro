@@ -8,5 +8,6 @@ namespace Pomodoro
     {
         public static string PomodoroDuration = "PomodoroDurations";
         public static string BreakDuration = "BreakDurations";
+        public static string History = "History";
     }
 }
